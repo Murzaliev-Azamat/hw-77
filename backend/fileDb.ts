@@ -1,9 +1,9 @@
 import { promises as fs } from 'fs';
 import {randomUUID} from "crypto";
-import {Message, MessageWithoutId} from "./types";
+import {Post, PostWithoutId} from "./types";
 
 const filename = './db.json';
-let data: Message[] = [];
+let data: Post[] = [];
 
 const fileDb = {
   async init() {
@@ -19,16 +19,15 @@ const fileDb = {
     return data;
   },
 
-  async addItem(item: MessageWithoutId) {
+  async addItem(item: PostWithoutId) {
     const id = randomUUID();
-    const message = {
+    const post = {
       id: id,
-      date: new Date().toISOString(),
       ...item,
     }
-    data.push(message);
+    data.push(post);
     await this.save();
-    return message;
+    return post;
   },
 
   async save() {

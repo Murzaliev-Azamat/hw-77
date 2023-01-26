@@ -1,8 +1,8 @@
-export interface Message {
+export interface Post {
   id: string;
   author: string;
   message: string;
-  date: string;
+  image: string | null;
 }
 
-export type MessageWithoutId = Omit<Message, 'id', 'date'>;
+export type PostWithoutId = Omit<Post, 'id'>;

@@ -1,17 +1,12 @@
-export interface EncodeMessagePayload {
-  decodedMessage: string;
-  password: string;
+export interface Post {
+  id: string;
+  author: string;
+  message: string;
+  image: string | null;
 }
 
-export interface DecodeMessagePayload {
-  encodedMessage: string;
-  password: string;
-}
-
-export interface EncodedMessageApi {
-  encoded: string;
-}
-
-export interface DecodedMessageApi {
-  decoded: string;
+export interface PostApi {
+  author: string;
+  message: string;
+  image: File | null;
 }
