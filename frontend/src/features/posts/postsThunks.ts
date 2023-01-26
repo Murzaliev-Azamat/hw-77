@@ -6,14 +6,12 @@ export const fetchPosts = createAsyncThunk<Post[]>(
   'posts/fetchAll',
   async () => {
     const postsResponse = await axiosApi.get<Post[]>('/posts');
-    const posts = postsResponse.data;
-
-    return posts;
+    return postsResponse.data;
   }
 );
 
 export const addPost = createAsyncThunk<void, PostApi>(
-  'posts/decodeMessage',
+  'posts/add',
   async (post) => {
     const formData = new FormData();
 
@@ -29,22 +27,3 @@ export const addPost = createAsyncThunk<void, PostApi>(
     await axiosApi.post<PostApi>('/posts', formData);
   }
 );
-//
-// export const fetchContacts = createAsyncThunk<Contact[]>(
-//   'contacts/fetchAll',
-//   async () => {
-//     const contactsResponse = await axiosApi.get<ContactsApiList | null>('/contacts.json');
-//     const contacts = contactsResponse.data;
-//     if (contacts === null) {
-//       return [];
-//     } else {
-//       return Object.keys(contacts).map(key => {
-//         const contact = contacts[key];
-//         return {
-//           ...contact,
-//           id: key
-//         }
-//       });
-//     }
-//   },
-// )

@@ -1,17 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Button, Grid, TextField } from '@mui/material';
-import { grey, yellow } from '@mui/material/colors';
 import { useAppDispatch } from '../../app/hooks';
 import { addPost, fetchPosts } from './postsThunks';
 import FileInput from '../../components/UI/FileInput/FileInput';
 import { PostApi } from '../../../types';
-// import { useAppDispatch, useAppSelector } from '../../app/hooks';
-// import { selectDecodedMessage, selectEncodedMessage } from './postsSlice';
 
 const FormForPosts = () => {
   const dispatch = useAppDispatch();
-  // const decodedMessage = useAppSelector(selectDecodedMessage);
-  // const encodedMessage = useAppSelector(selectEncodedMessage);
 
   const [state, setState] = useState<PostApi>({
     author: '',
@@ -51,12 +46,6 @@ const FormForPosts = () => {
     }
   };
 
-  // useEffect(() => {
-  //   setState(prevState => {
-  //     return {...prevState, encodedMessage: encodedMessage, decodedMessage: decodedMessage};
-  //   });
-  // }, [encodedMessage, decodedMessage]);
-
   return (
     <form
       autoComplete="off"
@@ -92,17 +81,6 @@ const FormForPosts = () => {
             label="Image"
           />
         </Grid>
-
-        {/*<Grid item xs>*/}
-        {/*  <TextField*/}
-        {/*    sx={{width: 1}}*/}
-        {/*    multiline rows={3}*/}
-        {/*    id="encodedMessage" label="Encoded message"*/}
-        {/*    value={state.encodedMessage}*/}
-        {/*    onChange={inputChangeHandler}*/}
-        {/*    name="encodedMessage"*/}
-        {/*  />*/}
-        {/*</Grid>*/}
       </Grid>
 
       <Button type="submit" color="primary" variant="contained">

@@ -14,8 +14,6 @@ const Posts = () => {
     dispatch(fetchPosts());
   }, [dispatch]);
 
-  console.log(posts)
-
   let info = null;
 
   if (fetchAllLoading) {

@@ -34,7 +34,7 @@ export const PostsSlice = createSlice({
     builder.addCase(addPost.pending, (state) => {
       state.addLoading = true;
     });
-    builder.addCase(addPost.fulfilled, (state, action) => {
+    builder.addCase(addPost.fulfilled, (state) => {
       state.addLoading = false;
     });
     builder.addCase(addPost.rejected, (state) => {
@@ -46,4 +46,3 @@ export const postsReducer = PostsSlice.reducer;
 export const selectPosts = (state: RootState) => state.posts.posts;
 
 export const selectFetchAllLoading = (state: RootState) => state.posts.fetchAllLoading;
-export const selectAddLoading = (state: RootState) => state.posts.addLoading;
