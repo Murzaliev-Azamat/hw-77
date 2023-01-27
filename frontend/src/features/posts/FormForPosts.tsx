@@ -53,7 +53,7 @@ const FormForPosts = () => {
     >
       <Grid item container justifyContent="space-between" alignItems="center" xs sx={{mb: 1}}>
         <TextField
-          sx={{width: '72%'}}
+          sx={{width: '100%'}}
           id="author" label="Author"
           value={state.author}
           onChange={inputChangeHandler}

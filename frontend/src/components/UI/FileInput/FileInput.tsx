@@ -40,6 +40,7 @@ const FileInput: React.FC<Props> = ({onChange, name, label}) => {
       <Grid container direction="row" spacing={2} alignItems="center">
         <Grid item xs>
           <TextField
+            sx={{width: '100%'}}
             disabled
             label={label}
             value={filename}
